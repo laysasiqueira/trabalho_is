@@ -1,8 +1,9 @@
 import { Column, Entity, ObjectIdColumn, PrimaryColumn } from "typeorm";
-import { TipoDisciplina } from "./lesson.enum";
+import { TipoAluno } from "./student.enum";
+import { Ano } from "./ano.enum";
 
 @Entity()
-export class Lesson{
+export class Student{
     @ObjectIdColumn()
     _id:string;
 
@@ -13,8 +14,11 @@ export class Lesson{
     nome:string;
     
     @Column()
-    docente:string;
+    ano:Ano;
 
     @Column()
-    tipo:TipoDisciplina;
+    tipo:TipoAluno;
+
+    @Column()
+    lessons: string[];
 }
