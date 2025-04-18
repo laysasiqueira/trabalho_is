@@ -22,7 +22,9 @@ export class LessonResolver{
 
     @Mutation(returns => LessonType)
     createLesson( 
-        @Args('createLessonInput')createLessonInput:CreateLessonInput){
+        @Args('createLessonInput')createLessonInput:CreateLessonInput
+    )
+        {
         return this.lessonService.createLesson(createLessonInput);
     }
 }

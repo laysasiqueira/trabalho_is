@@ -4,6 +4,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Lesson } from './lesson/lesson.entity';
+import { StudentModule } from './student/student.module';
+import { Student } from './student/student.entity';
 
 @Module({
   imports: [
@@ -12,14 +14,15 @@ import { Lesson } from './lesson/lesson.entity';
       url:'mongodb://localhost/school',
       synchronize:true,
       entities:[
-        Lesson
+        Lesson, Student
       ]
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
     }),
-    LessonModule
+    LessonModule,
+    StudentModule
   ],
 })
 export class AppModule {}
