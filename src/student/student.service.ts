@@ -44,4 +44,13 @@ export class StudentService {
         student.lessons = [...student.lessons, ...newLessons];
         return this.studentRepository.save(student);
     }
+
+    async deleteStudent(id:string){
+        let student = await this.studentRepository.findOne({where:{id}});
+        if (student){
+            await this.studentRepository.delete(student._id);
+            return true;
+        }
+        return false;
+    }
 }

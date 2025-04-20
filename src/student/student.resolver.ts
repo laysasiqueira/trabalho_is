@@ -7,6 +7,7 @@ import { LessonService } from "src/lesson/lesson.service";
 import { LessonType } from "src/lesson/lesson.type";
 import { Student } from "./student.entity";
 import { Lesson } from "src/lesson/lesson.entity";
+import { DeleteResult } from "typeorm";
 
 @Resolver(of => StudentType)
 export class StudentResolver{
@@ -43,10 +44,14 @@ export class StudentResolver{
 
     @ResolveField(() => [LessonType])
     async lessons(@Parent() student: Student): Promise<Lesson[]> {
-    // Garante que o campo "lessons" existe e tem IDs
     if (!student.lessons || student.lessons.length === 0) return [];
-
-    // Para MongoDB, usa uma consulta com "$in"
     return this.lessonService.getLessonsByIds(student.lessons);
+    }
+
+    @Mutation(returns=>Boolean)
+    deleteStudent(
+        @Args('id') id:string,
+    ){
+        return this.studentService.deleteStudent(id);
     }
 }
