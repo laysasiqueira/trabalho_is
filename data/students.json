@@ -1,0 +1,18 @@
+[
+  {
+    "id": "c16b0eca-fe25-4636-9cca-7e38e0f2f442",
+    "nome": "Rui",
+    "ano": "8",
+    "tipo": "Erasmus",
+    "lessons": []
+  },
+  {
+    "id": "bea00bd0-6997-4050-9cfc-af419cf3657f",
+    "nome": "Rui",
+    "ano": "8",
+    "tipo": "Erasmus",
+    "lessons": [
+      "b465caf3-596f-48a5-a842-1ec81541aa89"
+    ]
+  }
+]

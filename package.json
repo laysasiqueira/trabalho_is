@@ -35,12 +35,8 @@
     "mongodb": "^6.15.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
-<<<<<<< HEAD
-    "strong-soap": "^4.1.11"
-=======
-    "typeorm": "^0.3.22",
+    "strong-soap": "^4.1.11",
     "uuid": "^11.1.0"
->>>>>>> eb7067cf25d886af9c92f930cd2ad32592062f2d
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
